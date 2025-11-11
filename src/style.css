@@ -1,0 +1,192 @@
+/*
+Primary Base (Background)	Deep Charcoal	#121212	The dominant color for the main screen background.
+Secondary Base (Elements)	Dark Gray/Slate	#212121	For containers, cards, and distinct section backgrounds. Creates subtle depth.
+Text/Highlight	            Soft White	    #E0E0E0	The primary text color. Soft contrast for reduced eye strain.
+Accent (CTA/Action)	        Royal Purple	#8A2BE2	The key highlight color for CTAs, icons, and alerts.
+*/
+
+body {
+    background-color: #121212;
+    font-family: Verdana, sans-serif;
+    line-height: normal;
+    color: #E0E0E0;
+    min-width: 410px;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+header {
+    background-color: #212121;
+    padding-top: 15px;
+    margin-bottom: 15px;
+    position: sticky;
+    top: 0;
+}
+
+section {
+    padding: 15px;
+    background-color: #212121;
+    margin: 15px;
+    border-radius: 10px;
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+}
+
+a:link {
+    color: #E0E0E0;
+}
+
+a:visited {
+    color: #E0E0E0;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.3rem;
+}
+
+h5 {
+    font-size: 1.1rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 15px;
+    font-family: "Stack Sans Notch", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+strong {
+    font-weight: 600;
+}
+
+.track-list {
+    list-style: decimal;
+}
+
+.track-info {
+    margin-left: 50px;
+    margin-bottom: 15px;
+}
+
+#content {
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#media-player {
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 15px 0px;
+}
+
+#top-nav {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 15px;
+    padding: 15px;
+}
+
+#top-nav .link {
+    padding: 10px;
+}
+
+#top-nav li {
+    border-radius: 10px;
+    /* undecided on border
+    border: 1px solid #2B2B2B;
+    */
+    background-color: #121212;
+    width: 150px;
+    min-width: 150px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#personal-data {
+    text-align: center;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 250px;
+}
+
+.highlights-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 15px;
+    justify-content: space-evenly;
+}
+
+.highlight-card {
+    flex: 0 1 30%;
+    min-width: 250px;
+    border-radius: 10px;
+    background-color: #121212;
+    padding: 15px;
+}
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 15px;
+    padding: 15px;
+}
+
+.simple-card-image {
+    max-width: 100%;
+}
+
+.project-card {
+    flex: 0 1 30%;
+    min-width: 250px;
+    border-radius: 10px;
+    background-color: #121212;
+    padding: 15px;
+}
+
+@media (width <=800px) {
+    #content {
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    #top-nav {
+        gap: 5px;
+        padding: 5px;
+    }
+
+    #media-player {
+        margin: 0px;
+    }
+}
