@@ -93,6 +93,12 @@ strong {
     margin-bottom: 15px;
 }
 
+#quote {
+    text-align: center;
+    cursor: pointer;
+    min-height: 50px;
+}
+
 #content {
     margin-left: 15%;
     margin-right: 15%;

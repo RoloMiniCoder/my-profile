@@ -1,0 +1,36 @@
+/* -------------------------------------------
+   1. Spinner Container Styles (Centering)
+------------------------------------------- */
+.spinner-container {
+  /* Use flexbox to center the spinner horizontally and vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Set a height so the centering is visible */
+  height: 100px;
+  width: 100%;
+}
+
+/* -------------------------------------------
+   2. The Spinner Element Styles
+------------------------------------------- */
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3; /* Light grey base ring */
+  border-top: 5px solid #3498db; /* Blue rotating segment */
+  border-radius: 50%; /* Makes it perfectly circular */
+  animation: spin 1.2s linear infinite; /* Apply the animation */
+}
+
+/* -------------------------------------------
+   3. Keyframe Animation
+------------------------------------------- */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg); /* Start at 0 degrees */
+  }
+  100% {
+    transform: rotate(360deg); /* End at 360 degrees (a full circle) */
+  }
+}

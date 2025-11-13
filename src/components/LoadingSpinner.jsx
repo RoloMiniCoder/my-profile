@@ -1,5 +1,4 @@
-import React from 'react';
-//import './LoadingSpinner.css'; // ⬅️ Don't forget to create this file!
+import '../spinner.css'
 
 const LoadingSpinner = () => (
   <div className="spinner-container">

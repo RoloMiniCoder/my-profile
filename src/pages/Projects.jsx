@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import LoadingSpinner from './LoadingSpinner';
-import RateLimitExceeded from './RateLimitExceeded';
+import { useState, useEffect } from 'react';
+import LoadingSpinner from '../components/LoadingSpinner';
+import RateLimitExceeded from '../components/RateLimitExceeded';
 
 const imageLinkPrefix = 'https://opengraph.githubassets.com/1/RoloMiniCoder/';
 

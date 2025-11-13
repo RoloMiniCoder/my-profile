@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,14 +6,34 @@ import {
   Link
 } from 'react-router-dom';
 
-import Home from './components/Home';
-import Details from './components/Details';
-import Projects from './components/Projects'
-import Music from './components/Music';
-import Gaming from './components/Gaming';
+import Home from './pages/Home';
+import Details from './pages/Details';
+import Projects from './pages/Projects'
+import Music from './pages/Music';
+import Gaming from './pages/Gaming';
+
 
 
 function App() {
+  const [quote, setQuote] = useState('');
+
+  async function fetchQuote() {
+    const quote = await fetch(`http://localhost:3001/api/quotes`).then(res => res.json())
+    return quote.quote
+  }
+
+  async function handleClick() {
+    const quote = await fetchQuote();
+    setQuote(quote);
+  }
+
+  useEffect(() => {
+    (async () => {
+      const quote = await fetchQuote()
+      setQuote(quote)
+    })()
+  }, [])
+
   return (
     <Router>
       <div id='media-player'>
@@ -25,7 +45,10 @@ function App() {
           style={{ colorScheme: "light dark", border: 'none' }}
           title="TIDAL Embed Player" />
       </div>
-      <header >
+      <div id='quote' onClick={handleClick}>
+        <p>{quote}</p>
+      </div>
+      <header>
         <nav>
           <ul id='top-nav'>
             <li>

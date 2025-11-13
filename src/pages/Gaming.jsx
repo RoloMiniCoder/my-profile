@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import LoadingSpinner from './LoadingSpinner';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const gamingProfiles = [
     { name: 'Steam', link: 'https://steamcommunity.com/profiles/76561198013331728/' },
