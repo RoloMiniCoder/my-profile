@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 
 import Home from './pages/Home';
-import Details from './pages/Details';
+import AboutMe from './pages/AboutMe';
 import Projects from './pages/Projects'
 import Music from './pages/Music';
 import Gaming from './pages/Gaming';
@@ -51,13 +51,8 @@ function App() {
         <nav>
           <ul id='top-nav'>
             <li>
-              <Link to="/" className='link'>
-                Home
-              </Link>
-            </li>
-            <li>
               <Link to="/details" className='link'>
-                My Details
+                About me
               </Link>
             </li>
             <li>
@@ -82,7 +77,7 @@ function App() {
       <div id="content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/details" element={<Details />} />
+          <Route path="/details" element={<AboutMe />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/gaming" element={<Gaming />} />
           <Route path="/music" element={<Music />} />
