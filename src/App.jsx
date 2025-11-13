@@ -13,7 +13,6 @@ import Music from './pages/Music';
 import Gaming from './pages/Gaming';
 
 
-
 function App() {
   const [quote, setQuote] = useState('');
 

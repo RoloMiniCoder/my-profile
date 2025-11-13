@@ -1,5 +1,5 @@
-import TopList from '../components/TopList';
-import WeeklySummary from '../components/WeeklySummary';
+import TopList from './TopList';
+import WeeklySummary from './WeeklySummary';
 
 const profileList = [
   { link: 'https://www.last.fm/user/darkstahrl', name: 'Last.fm' },
@@ -25,7 +25,6 @@ function ProfileLinks({ profiles }) {
 }
 
 export default function Music() {
-
   return (
     <div className="music-page">
       <TopList />
