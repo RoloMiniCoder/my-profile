@@ -27,7 +27,7 @@ export default function useDataPollingFetching(url, intervalMs = 60000) {
     } finally {
       setIsLoading(false);
     }
-  }, [url, data]); // Include 'data' if you need to use previous data in the logic
+  }, [url]); // Include 'data' if you need to use previous data in the logic
 
   useEffect(() => {
     fetchData();

@@ -16,11 +16,6 @@ import DataStateWrapper from './components/DataStateWrapper';
 function App() {
   const { data: quote, isLoading, error } = useDataPollingFetching(`/quotes`);
 
-  console.log(quote)
-
-  async function handleClick() {
-  }
-
   return (
     <Router>
       <div id='media-player'>
@@ -33,8 +28,8 @@ function App() {
           title="TIDAL Embed Player" />
       </div>
       <DataStateWrapper isLoading={isLoading} error={error}>
-        {quote && (<div id='quote' onClick={handleClick}>
-          <p>{quote}</p>
+        {quote && (<div id='quote'>
+          <blockquote>{quote}</blockquote>
         </div>)}
       </DataStateWrapper>
       <header>
@@ -66,6 +61,7 @@ function App() {
 
       <div id="content">
         <Routes>
+          <Route path="/" element={<AboutMe />} />
           <Route path="/aboutme" element={<AboutMe />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/gaming" element={<Gaming />} />

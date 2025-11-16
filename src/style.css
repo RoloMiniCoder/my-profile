@@ -114,7 +114,7 @@ strong {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     gap: 15px;
     padding: 15px;
 }
