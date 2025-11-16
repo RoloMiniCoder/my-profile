@@ -1,37 +1,25 @@
-import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Link
 } from 'react-router-dom';
+import useDataPollingFetching from './hooks/useDataPollingFetching';
 
-import Home from './pages/Home';
 import AboutMe from './pages/AboutMe';
 import Projects from './pages/Projects'
 import Music from './pages/Music';
 import Gaming from './pages/Gaming';
+import DataStateWrapper from './components/DataStateWrapper';
 
 
 function App() {
-  const [quote, setQuote] = useState('');
+  const { data: quote, isLoading, error } = useDataPollingFetching(`/quotes`);
 
-  async function fetchQuote() {
-    const quote = await fetch(`http://localhost:3001/api/quotes`).then(res => res.json())
-    return quote.quote
-  }
+  console.log(quote)
 
   async function handleClick() {
-    const quote = await fetchQuote();
-    setQuote(quote);
   }
-
-  useEffect(() => {
-    (async () => {
-      const quote = await fetchQuote()
-      setQuote(quote)
-    })()
-  }, [])
 
   return (
     <Router>
@@ -44,14 +32,16 @@ function App() {
           style={{ colorScheme: "light dark", border: 'none' }}
           title="TIDAL Embed Player" />
       </div>
-      <div id='quote' onClick={handleClick}>
-        <p>{quote}</p>
-      </div>
+      <DataStateWrapper isLoading={isLoading} error={error}>
+        {quote && (<div id='quote' onClick={handleClick}>
+          <p>{quote}</p>
+        </div>)}
+      </DataStateWrapper>
       <header>
         <nav>
           <ul id='top-nav'>
             <li>
-              <Link to="/details" className='link'>
+              <Link to="/aboutme" className='link'>
                 About me
               </Link>
             </li>
@@ -76,8 +66,7 @@ function App() {
 
       <div id="content">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/details" element={<AboutMe />} />
+          <Route path="/aboutme" element={<AboutMe />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/gaming" element={<Gaming />} />
           <Route path="/music" element={<Music />} />
