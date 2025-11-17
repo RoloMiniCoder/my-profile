@@ -10,11 +10,17 @@ import AboutMe from './pages/AboutMe';
 import Projects from './pages/Projects'
 import Music from './pages/Music';
 import Gaming from './pages/Gaming';
-import DataStateWrapper from './components/DataStateWrapper';
 
+function Quote() {
+  const { data: quote, isLoading, error } = useDataPollingFetching(`/quotes`);
+
+  return (
+    <div id='quote'>
+      {quote && <blockquote>{quote}</blockquote>}
+    </div>)
+}
 
 function App() {
-  const { data: quote, isLoading, error } = useDataPollingFetching(`/quotes`);
 
   return (
     <Router>
@@ -27,14 +33,10 @@ function App() {
           style={{ colorScheme: "light dark", border: 'none' }}
           title="TIDAL Embed Player" />
       </div>
-      <DataStateWrapper isLoading={isLoading} error={error}>
-        {quote && (<div id='quote'>
-          <blockquote>{quote}</blockquote>
-        </div>)}
-      </DataStateWrapper>
+      <Quote />
       <header>
         <nav>
-          <div className='content'>
+          <div>
             <ul id='top-nav'>
               <Link to="/aboutme" className='link'>
                 <li>
@@ -61,15 +63,17 @@ function App() {
         </nav>
       </header>
 
-      <div id="content">
-        <Routes>
-          <Route path="/" element={<AboutMe />} />
-          <Route path="/aboutme" element={<AboutMe />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/gaming" element={<Gaming />} />
-          <Route path="/music" element={<Music />} />
-          <Route path="*" element={<div><h2>404 - Page Not Found</h2><p>Please use the navigation above.</p></div>} />
-        </Routes>
+      <div id="body">
+        <div id="content">
+          <Routes>
+            <Route path="/" element={<AboutMe />} />
+            <Route path="/aboutme" element={<AboutMe />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/gaming" element={<Gaming />} />
+            <Route path="/music" element={<Music />} />
+            <Route path="*" element={<div><h2>404 - Page Not Found</h2><p>Please use the navigation above.</p></div>} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );

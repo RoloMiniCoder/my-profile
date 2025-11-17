@@ -102,14 +102,20 @@ strong {
 }
 
 #quote {
+    color: #156070;
+    font-family: "Stack Sans Notch", sans-serif;
+    align-content: center;
     text-align: center;
-    cursor: pointer;
-    min-height: 50px;
+    height: 50px;
+}
+
+#body {
+    display: flex;
+    justify-content: center;
 }
 
 #content {
-    margin-left: 15%;
-    margin-right: 15%;
+    width: 740px;
 }
 
 #media-player {
@@ -135,9 +141,6 @@ strong {
 
 #top-nav li {
     border-radius: 10px;
-    /* undecided on border
-    border: 1px solid #2B2B2B;
-    */
     background-color: #121212;
     color: #156070;
     width: 150px;
@@ -147,7 +150,7 @@ strong {
     align-items: center;
     font-family: "Stack Sans Notch", sans-serif;
     transition:
-        background-color 2s, color 2s;
+        background-color 1s, color 1s;
 }
 
 #top-nav li:hover {
@@ -162,7 +165,7 @@ strong {
 #media-player,
 #quote {
     background: #3F054F;
-    background: linear-gradient(90deg, rgba(63, 5, 79, 1) 50%, rgba(102, 51, 153, 1) 75%, rgba(39, 36, 98, 1) 100%);
+    background: radial-gradient(circle, rgba(63, 5, 79, 1) 75%, rgba(21, 96, 112, 1) 100%);
 }
 
 .profile-pic {
