@@ -34,28 +34,30 @@ function App() {
       </DataStateWrapper>
       <header>
         <nav>
-          <ul id='top-nav'>
-            <li>
-              <Link to="/aboutme" className='link'>
-                About me
-              </Link>
-            </li>
-            <li>
-              <Link to="/music" className='link'>
-                Stuff I listen to
-              </Link>
-            </li>
-            <li>
-              <Link to="/gaming" className='link'>
-                What I've been playing
-              </Link>
-            </li>
-            <li>
-              <Link to="/projects" className='link'>
-                Projects
-              </Link>
-            </li>
-          </ul>
+          <div className='content'>
+            <ul id='top-nav'>
+              <li>
+                <Link to="/aboutme" className='link'>
+                  ABOUT ME
+                </Link>
+              </li>
+              <li>
+                <Link to="/music" className='link'>
+                  LISTENING TO
+                </Link>
+              </li>
+              <li>
+                <Link to="/gaming" className='link'>
+                  GAMING
+                </Link>
+              </li>
+              <li>
+                <Link to="/projects" className='link'>
+                  PROJECTS
+                </Link>
+              </li>
+            </ul>
+          </div>
         </nav>
       </header>
 
