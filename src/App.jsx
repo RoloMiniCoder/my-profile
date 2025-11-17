@@ -36,26 +36,26 @@ function App() {
         <nav>
           <div className='content'>
             <ul id='top-nav'>
-              <li>
-                <Link to="/aboutme" className='link'>
+              <Link to="/aboutme" className='link'>
+                <li>
                   ABOUT ME
-                </Link>
-              </li>
-              <li>
-                <Link to="/music" className='link'>
+                </li>
+              </Link>
+              <Link to="/music" className='link'>
+                <li>
                   LISTENING TO
-                </Link>
-              </li>
-              <li>
-                <Link to="/gaming" className='link'>
+                </li>
+              </Link>
+              <Link to="/gaming" className='link'>
+                <li>
                   GAMING
-                </Link>
-              </li>
-              <li>
-                <Link to="/projects" className='link'>
+                </li>
+              </Link>
+              <Link to="/projects" className='link'>
+                <li>
                   PROJECTS
-                </Link>
-              </li>
+                </li>
+              </Link>
             </ul>
           </div>
         </nav>
