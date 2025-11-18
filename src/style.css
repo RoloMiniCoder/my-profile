@@ -4,6 +4,15 @@ Secondary Base (Elements)	Dark Gray/Slate	#212121	For containers, cards, and dis
 Text/Highlight	            Soft White	    #E0E0E0	The primary text color. Soft contrast for reduced eye strain.
 Accent (CTA/Action)	        Royal Purple	#8A2BE2	The key highlight color for CTAs, icons, and alerts.
 */
+fakeSelector {
+    background-color: #3f054f;
+    background-color: #663399;
+    /* rebeccapurple*/
+    background-color: #CAA8F5;
+    background-color: #156070;
+    background-color: #272462;
+}
+
 
 body {
     background-color: #121212;
@@ -18,7 +27,6 @@ body {
 
 header {
     background-color: #212121;
-    padding-top: 15px;
     margin-bottom: 15px;
     position: sticky;
     top: 0;
@@ -94,50 +102,70 @@ strong {
 }
 
 #quote {
+    color: #156070;
+    font-family: "Stack Sans Notch", sans-serif;
+    align-content: center;
     text-align: center;
-    cursor: pointer;
-    min-height: 50px;
+    height: 50px;
+}
+
+#body {
+    display: flex;
+    justify-content: center;
 }
 
 #content {
-    margin-left: 15%;
-    margin-right: 15%;
+    width: 740px;
 }
 
 #media-player {
     display: flex;
     justify-content: center;
-    margin: 0px 0px 15px 0px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 #top-nav {
     display: flex;
     flex-flow: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     gap: 15px;
     padding: 15px;
+    border-bottom: solid #156070;
 }
 
-#top-nav .link {
+#top-nav .link li {
     padding: 10px;
 }
 
 #top-nav li {
     border-radius: 10px;
-    /* undecided on border
-    border: 1px solid #2B2B2B;
-    */
     background-color: #121212;
+    color: #156070;
     width: 150px;
     min-width: 150px;
     display: inline-flex;
     justify-content: center;
     align-items: center;
+    font-family: "Stack Sans Notch", sans-serif;
+    transition:
+        background-color 1s, color 1s;
+}
+
+#top-nav li:hover {
+    background-color: #3f054f;
+    color: #CAA8F5;
 }
 
 #personal-data {
     text-align: center;
+}
+
+#media-player,
+#quote {
+    background: #3F054F;
+    background: radial-gradient(circle, rgba(63, 5, 79, 1) 75%, rgba(21, 96, 112, 1) 100%);
 }
 
 .profile-pic {

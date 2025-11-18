@@ -1,37 +1,26 @@
-import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Link
 } from 'react-router-dom';
+import useDataPollingFetching from './hooks/useDataPollingFetching';
 
-import Home from './pages/Home';
 import AboutMe from './pages/AboutMe';
 import Projects from './pages/Projects'
 import Music from './pages/Music';
 import Gaming from './pages/Gaming';
 
+function Quote() {
+  const { data: quote, isLoading, error } = useDataPollingFetching(`/quotes`);
+
+  return (
+    <div id='quote'>
+      {quote && <blockquote>{quote}</blockquote>}
+    </div>)
+}
 
 function App() {
-  const [quote, setQuote] = useState('');
-
-  async function fetchQuote() {
-    const quote = await fetch(`http://localhost:3001/api/quotes`).then(res => res.json())
-    return quote.quote
-  }
-
-  async function handleClick() {
-    const quote = await fetchQuote();
-    setQuote(quote);
-  }
-
-  useEffect(() => {
-    (async () => {
-      const quote = await fetchQuote()
-      setQuote(quote)
-    })()
-  }, [])
 
   return (
     <Router>
@@ -44,45 +33,47 @@ function App() {
           style={{ colorScheme: "light dark", border: 'none' }}
           title="TIDAL Embed Player" />
       </div>
-      <div id='quote' onClick={handleClick}>
-        <p>{quote}</p>
-      </div>
+      <Quote />
       <header>
         <nav>
-          <ul id='top-nav'>
-            <li>
-              <Link to="/details" className='link'>
-                About me
+          <div>
+            <ul id='top-nav'>
+              <Link to="/aboutme" className='link'>
+                <li>
+                  ABOUT ME
+                </li>
               </Link>
-            </li>
-            <li>
               <Link to="/music" className='link'>
-                Stuff I listen to
+                <li>
+                  LISTENING TO
+                </li>
               </Link>
-            </li>
-            <li>
               <Link to="/gaming" className='link'>
-                What I've been playing
+                <li>
+                  GAMING
+                </li>
               </Link>
-            </li>
-            <li>
               <Link to="/projects" className='link'>
-                Projects
+                <li>
+                  PROJECTS
+                </li>
               </Link>
-            </li>
-          </ul>
+            </ul>
+          </div>
         </nav>
       </header>
 
-      <div id="content">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/details" element={<AboutMe />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/gaming" element={<Gaming />} />
-          <Route path="/music" element={<Music />} />
-          <Route path="*" element={<div><h2>404 - Page Not Found</h2><p>Please use the navigation above.</p></div>} />
-        </Routes>
+      <div id="body">
+        <div id="content">
+          <Routes>
+            <Route path="/" element={<AboutMe />} />
+            <Route path="/aboutme" element={<AboutMe />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/gaming" element={<Gaming />} />
+            <Route path="/music" element={<Music />} />
+            <Route path="*" element={<div><h2>404 - Page Not Found</h2><p>Please use the navigation above.</p></div>} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
