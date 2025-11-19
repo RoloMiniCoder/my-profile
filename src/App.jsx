@@ -10,13 +10,18 @@ import AboutMe from './pages/AboutMe';
 import Projects from './pages/Projects'
 import Music from './pages/Music';
 import Gaming from './pages/Gaming';
+import Blog from './pages/Blog';
 
 function Quote() {
   const { data: quote, isLoading, error } = useDataPollingFetching(`/quotes`);
 
   return (
     <div id='quote'>
-      {quote && <blockquote>{quote}</blockquote>}
+      {quote && (
+        <blockquote>
+          <p>{quote}</p>
+        </blockquote>
+      )}
     </div>)
 }
 
@@ -24,15 +29,6 @@ function App() {
 
   return (
     <Router>
-      <div id='media-player'>
-        <iframe src="https://embed.tidal.com/tracks/164541"
-          width="500"
-          height="120"
-          allow="encrypted-media; fullscreen; clipboard-write https://embed.tidal.com; web-share"
-          sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox"
-          style={{ colorScheme: "light dark", border: 'none' }}
-          title="TIDAL Embed Player" />
-      </div>
       <Quote />
       <header>
         <nav>
@@ -41,6 +37,11 @@ function App() {
               <Link to="/aboutme" className='link'>
                 <li>
                   ABOUT ME
+                </li>
+              </Link>
+              <Link to="/blog" className='link'>
+                <li>
+                  BLOG
                 </li>
               </Link>
               <Link to="/music" className='link'>
@@ -71,6 +72,7 @@ function App() {
             <Route path="/projects" element={<Projects />} />
             <Route path="/gaming" element={<Gaming />} />
             <Route path="/music" element={<Music />} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="*" element={<div><h2>404 - Page Not Found</h2><p>Please use the navigation above.</p></div>} />
           </Routes>
         </div>
