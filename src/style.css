@@ -25,13 +25,6 @@ body {
     font-style: normal;
 }
 
-header {
-    background-color: #212121;
-    margin-bottom: 15px;
-    position: sticky;
-    top: 0;
-}
-
 section {
     padding: 15px;
     background-color: #212121;
@@ -54,6 +47,7 @@ a:visited {
 
 h1 {
     font-size: 2.5rem;
+    text-align: center;
 }
 
 h2 {
@@ -116,12 +110,25 @@ blockquote {
     margin-bottom: 15px;
 }
 
+#title {
+    padding-top: 25px;
+    font-family: "Silkscreen", sans-serif;
+    color: #CAA8F5;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 0px 0px 10px hotpink;
+}
+
 #quote {
-    color: #156070;
-    font-family: "Stack Sans Notch", sans-serif;
     align-content: center;
     text-align: center;
-    height: 100px;
+    min-height: 50px;
+}
+
+#quote blockquote{
+    font-family: "Stack Sans Notch", sans-serif;
+    border: 0px;
+    color: #156070;
 }
 
 #body {
@@ -148,7 +155,10 @@ blockquote {
     padding: 15px;
     border-bottom: solid #156070;
     background-color: #212121;
+    position: sticky;
+    top: 0;
 }
+
 
 #top-nav .link-button {
     padding: 10px;
@@ -176,8 +186,7 @@ blockquote {
     text-align: center;
 }
 
-#media-player,
-#quote {
+#header {
     background: #3F054F;
     background: radial-gradient(circle, rgba(63, 5, 79, 1) 75%, rgba(21, 96, 112, 1) 100%);
 }

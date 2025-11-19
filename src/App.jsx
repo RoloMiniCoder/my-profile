@@ -30,7 +30,7 @@ function Button({ buttonText, linkTo }) {
 
   const pathname = useLocation().pathname;
   const isActive = pathname === linkTo;
-  
+
   return (
     <Link to={linkTo}>
       <button type='button' className={`link-button ${isActive ? 'active' : ''}`}>
@@ -43,7 +43,10 @@ function Button({ buttonText, linkTo }) {
 function App() {
   return (
     <Router>
-      <Quote />
+      <div id='header'>
+        <h1 id='title'>Martelation Station</h1>
+        <Quote />
+      </div>
       <nav id='top-nav'>
         <Button buttonText='ABOUT ME' linkTo='/aboutme' />
         <Button buttonText='BLOG' linkTo='/blog' />

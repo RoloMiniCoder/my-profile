@@ -27,8 +27,8 @@ function ProfileLinks({ profiles }) {
 export default function Music() {
   return (
     <div className="music-page">
-      <TopList />
       <WeeklySummary />
+      <TopList />
       <ProfileLinks profiles={profileList} />
     </div>
   );
