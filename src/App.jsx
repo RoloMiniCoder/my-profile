@@ -55,7 +55,7 @@ function App() {
         <Button buttonText='PROJECTS' linkTo='/projects' />
       </nav>
 
-      <div id="body">
+      <main id="body">
         <div id="content">
           <Routes>
             <Route path="/" element={<AboutMe />} />
@@ -67,7 +67,7 @@ function App() {
             <Route path="*" element={<div><h2>404 - Page Not Found</h2><p>Please use the navigation above.</p></div>} />
           </Routes>
         </div>
-      </div>
+      </main>
     </Router>
   );
 }

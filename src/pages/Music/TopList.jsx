@@ -1,21 +1,35 @@
 import useDataFetching from '../../hooks/useDataFetching';
 import DataStateWrapper from '../../components/DataStateWrapper';
 
-function TrackCard({ trackName, artistName }) {
+function TopTracks({ topTracks }) {
     return (
-        <li className="track-info">
-            <p className="track-title">{trackName}</p>
-            <p className="track-artist">{artistName}</p>
-        </li>
-    );
+        <div className='top-list'>
+            <h2>Recent Listens</h2>
+            <ol className="track-list">
+                {topTracks.map((track) => (
+                    <li key={track.name + track.artist.name}>
+                        <p>{track.name}</p>
+                        <p><small>{track.artist.name}</small></p>
+                    </li>
+                ))}
+            </ol>
+        </div>
+    )
 }
 
-function ArtistCard({ artistName, playCount }) {
+function TopArtists({ topArtists }) {
     return (
-        <li className='artist-info'>
-            <p className='artist-name'>{artistName}</p>
-            <p className='artist-playcount'> - Played {playCount} times</p>
-        </li>
+        <div className='top-list'>
+            <h2>Top Artists</h2>
+            <ol className='artist-list'>
+                {topArtists.map(artist => (
+                    <li key={artist.name}>
+                        <p>{artist.name}</p>
+                        <p><small>- Played {artist.playcount} times</small></p>
+                    </li>
+                ))}
+            </ol>
+        </div>
     )
 }
 
@@ -23,37 +37,18 @@ export default function TopList() {
     const { data: musicLists, isLoading, error } = useDataFetching(`/music/data`);
 
     return (
-        <section className="music-section">
+        <section>
             <DataStateWrapper isLoading={isLoading} error={error}>
                 {musicLists && (
-                    <>
-                        <div>
-                            <h2>What I've Been Listening To 🎧</h2>
-                            <ol className="track-list">
-                                {musicLists.topTracks.map((track) => (
-                                    <TrackCard
-                                        key={track.name + track.artist.name}
-                                        trackName={track.name}
-                                        artistName={track.artist.name}
-                                    />
-                                ))}
-                            </ol>
-                        </div>
-                        <div>
-                            <h2>Top Artists</h2>
-                            <ol className='artist-list'>
-                                {musicLists.topArtists.map(artist => (
-                                    <ArtistCard
-                                        key={artist.name}
-                                        artistName={artist.name}
-                                        playCount={artist.playcount}
-                                    />
-                                ))}
-                            </ol>
-                        </div>
-                    </>
+                    <div id='top-lists'>
+                        <TopTracks topTracks={musicLists.topTracks} />
+                        <TopArtists topArtists={musicLists.topArtists} />
+                    </div>
                 )}
             </DataStateWrapper>
+            <footer>
+                <p><small>Data extracted from <a href="https://www.last.fm/" target='_blank'>Last.fm</a></small></p>
+            </footer>
         </section>
     )
 }

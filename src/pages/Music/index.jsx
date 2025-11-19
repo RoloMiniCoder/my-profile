@@ -9,9 +9,9 @@ const profileList = [
 
 function ProfileLinks({ profiles }) {
   return (
-    <section className="music-section">
+    <section id='music-profile-links'>
       <h2>Find Me On</h2>
-      <ul className="profile-links">
+      <ul>
         {profiles.map((profile) => (
           <li key={profile.link}>
             <a href={profile.link} target="_blank" rel="noopener noreferrer">
@@ -26,10 +26,10 @@ function ProfileLinks({ profiles }) {
 
 export default function Music() {
   return (
-    <div className="music-page">
+    <>
       <WeeklySummary />
       <TopList />
       <ProfileLinks profiles={profileList} />
-    </div>
+    </>
   );
 }

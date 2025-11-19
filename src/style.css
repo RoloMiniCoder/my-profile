@@ -1,9 +1,3 @@
-/*
-Primary Base (Background)	Deep Charcoal	#121212	The dominant color for the main screen background.
-Secondary Base (Elements)	Dark Gray/Slate	#212121	For containers, cards, and distinct section backgrounds. Creates subtle depth.
-Text/Highlight	            Soft White	    #E0E0E0	The primary text color. Soft contrast for reduced eye strain.
-Accent (CTA/Action)	        Royal Purple	#8A2BE2	The key highlight color for CTAs, icons, and alerts.
-*/
 fakeSelector {
     background-color: #3f054f;
     background-color: #663399;
@@ -12,7 +6,6 @@ fakeSelector {
     background-color: #156070;
     background-color: #272462;
 }
-
 
 body {
     background-color: #121212;
@@ -38,11 +31,11 @@ a {
 }
 
 a:link {
-    color: #E0E0E0;
+    color: #CAA8F5;
 }
 
 a:visited {
-    color: #E0E0E0;
+    color: #CAA8F5;
 }
 
 h1 {
@@ -101,13 +94,8 @@ blockquote {
     color: #4a4a4a;
 }
 
-.track-list {
-    list-style: decimal;
-}
-
-.track-info {
-    margin-left: 50px;
-    margin-bottom: 15px;
+footer {
+    text-align: center;
 }
 
 #title {
@@ -125,7 +113,7 @@ blockquote {
     min-height: 50px;
 }
 
-#quote blockquote{
+#quote blockquote {
     font-family: "Stack Sans Notch", sans-serif;
     border: 0px;
     color: #156070;
@@ -172,6 +160,7 @@ blockquote {
     justify-content: center;
     align-items: center;
     font-family: "Stack Sans Notch", sans-serif;
+    cursor: pointer;
     transition:
         background-color 1s, color 1s;
 }
@@ -182,6 +171,11 @@ blockquote {
     color: #CAA8F5;
 }
 
+#top-nav .link-button.active {
+    cursor: default;
+}
+
+
 #personal-data {
     text-align: center;
 }
@@ -189,6 +183,23 @@ blockquote {
 #header {
     background: #3F054F;
     background: radial-gradient(circle, rgba(63, 5, 79, 1) 75%, rgba(21, 96, 112, 1) 100%);
+}
+
+#top-lists {
+    display: flex;
+}
+
+.top-list {
+    flex: 1;
+}
+
+.top-list h2 {
+    text-align: center;
+}
+
+#weekly-summary,
+#music-profile-links {
+    text-align: center;
 }
 
 .blog-categories {
