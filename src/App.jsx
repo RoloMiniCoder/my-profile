@@ -2,7 +2,8 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Link
+  Link,
+  useLocation
 } from 'react-router-dom';
 import useDataPollingFetching from './hooks/useDataPollingFetching';
 
@@ -25,44 +26,31 @@ function Quote() {
     </div>)
 }
 
-function App() {
+function Button({ buttonText, linkTo }) {
 
+  const pathname = useLocation().pathname;
+  const isActive = pathname === linkTo;
+  
+  return (
+    <Link to={linkTo}>
+      <button type='button' className={`link-button ${isActive ? 'active' : ''}`}>
+        {buttonText}
+      </button>
+    </Link>
+  )
+}
+
+function App() {
   return (
     <Router>
       <Quote />
-      <header>
-        <nav>
-          <div>
-            <ul id='top-nav'>
-              <Link to="/aboutme" className='link'>
-                <li>
-                  ABOUT ME
-                </li>
-              </Link>
-              <Link to="/blog" className='link'>
-                <li>
-                  BLOG
-                </li>
-              </Link>
-              <Link to="/music" className='link'>
-                <li>
-                  LISTENING TO
-                </li>
-              </Link>
-              <Link to="/gaming" className='link'>
-                <li>
-                  GAMING
-                </li>
-              </Link>
-              <Link to="/projects" className='link'>
-                <li>
-                  PROJECTS
-                </li>
-              </Link>
-            </ul>
-          </div>
-        </nav>
-      </header>
+      <nav id='top-nav'>
+        <Button buttonText='ABOUT ME' linkTo='/aboutme' />
+        <Button buttonText='BLOG' linkTo='/blog' />
+        <Button buttonText='LISTENING TO' linkTo='/music' />
+        <Button buttonText='GAMING' linkTo='/gaming' />
+        <Button buttonText='PROJECTS' linkTo='/projects' />
+      </nav>
 
       <div id="body">
         <div id="content">

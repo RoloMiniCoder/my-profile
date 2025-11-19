@@ -97,12 +97,14 @@ strong {
 }
 
 blockquote {
-  margin: 1em 0; /* Vertical spacing */
-  padding-left: 1em; 
-  border-left: 4px solid #156070; /* Accent color border */
-  font-style: italic;
-  font-size: 1em;
-  color: #4a4a4a;
+    margin: 1em 0;
+    /* Vertical spacing */
+    padding-left: 1em;
+    border-left: 4px solid #156070;
+    /* Accent color border */
+    font-style: italic;
+    font-size: 1em;
+    color: #4a4a4a;
 }
 
 .track-list {
@@ -140,19 +142,17 @@ blockquote {
 
 #top-nav {
     display: flex;
-    flex-flow: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
     padding: 15px;
     border-bottom: solid #156070;
+    background-color: #212121;
 }
 
-#top-nav .link li {
+#top-nav .link-button {
     padding: 10px;
-}
-
-#top-nav li {
+    border: 0px;
     border-radius: 10px;
     background-color: #121212;
     color: #156070;
@@ -166,7 +166,8 @@ blockquote {
         background-color 1s, color 1s;
 }
 
-#top-nav li:hover {
+#top-nav .link-button:hover,
+#top-nav .link-button.active {
     background-color: #3f054f;
     color: #CAA8F5;
 }
