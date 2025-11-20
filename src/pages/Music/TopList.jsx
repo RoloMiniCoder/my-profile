@@ -8,8 +8,7 @@ function TopTracks({ topTracks }) {
             <ol className="track-list">
                 {topTracks.map((track) => (
                     <li key={track.name + track.artist.name}>
-                        <p>{track.name}</p>
-                        <p><small>{track.artist.name}</small></p>
+                        <p>{track.name}<br /><small>{track.artist.name}</small></p>
                     </li>
                 ))}
             </ol>
@@ -24,8 +23,7 @@ function TopArtists({ topArtists }) {
             <ol className='artist-list'>
                 {topArtists.map(artist => (
                     <li key={artist.name}>
-                        <p>{artist.name}</p>
-                        <p><small>- Played {artist.playcount} times</small></p>
+                        <p>{artist.name}<br /><small>- Played {artist.playcount} times</small></p>
                     </li>
                 ))}
             </ol>

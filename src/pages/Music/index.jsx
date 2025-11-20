@@ -10,7 +10,7 @@ const profileList = [
 function ProfileLinks({ profiles }) {
   return (
     <section id='music-profile-links'>
-      <h2>Find Me On</h2>
+      <h2>Find the stuff I listen to on:</h2>
       <ul>
         {profiles.map((profile) => (
           <li key={profile.link}>
