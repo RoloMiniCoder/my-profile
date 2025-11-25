@@ -23,7 +23,7 @@ function TopArtists({ topArtists }) {
             <ol className='artist-list'>
                 {topArtists.map(artist => (
                     <li key={artist.name}>
-                        <p>{artist.name}<br /><small>- Played {artist.playcount} times</small></p>
+                        <p>{artist.name}<br /><small>Played {artist.playcount} times</small></p>
                     </li>
                 ))}
             </ol>

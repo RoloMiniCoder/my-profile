@@ -1,5 +1,5 @@
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Routes,
   Route,
   Link,
@@ -42,33 +42,35 @@ function Button({ buttonText, linkTo }) {
 
 function App() {
   return (
-    <Router>
+    <>
       <div id='header'>
         <h1 id='title'>Martelation Station</h1>
         <Quote />
       </div>
-      <nav id='top-nav'>
-        <Button buttonText='ABOUT ME' linkTo='/aboutme' />
-        <Button buttonText='BLOG' linkTo='/blog' />
-        <Button buttonText='LISTENING TO' linkTo='/music' />
-        <Button buttonText='GAMING' linkTo='/gaming' />
-        <Button buttonText='PROJECTS' linkTo='/projects' />
-      </nav>
+      <BrowserRouter>
+        <nav id='top-nav'>
+          <Button buttonText='ABOUT ME' linkTo='/aboutme' />
+          <Button buttonText='BLOG' linkTo='/blog' />
+          <Button buttonText='LISTENING TO' linkTo='/music' />
+          <Button buttonText='GAMING' linkTo='/gaming' />
+          <Button buttonText='PROJECTS' linkTo='/projects' />
+        </nav>
 
-      <main id="body">
-        <div id="content">
-          <Routes>
-            <Route path="/" element={<AboutMe />} />
-            <Route path="/aboutme" element={<AboutMe />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/gaming" element={<Gaming />} />
-            <Route path="/music" element={<Music />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="*" element={<div><h2>404 - Page Not Found</h2><p>Please use the navigation above.</p></div>} />
-          </Routes>
-        </div>
-      </main>
-    </Router>
+        <main id="body">
+          <div id="content">
+            <Routes>
+              <Route path="/" element={<AboutMe />} />
+              <Route path="/aboutme" element={<AboutMe />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/gaming" element={<Gaming />} />
+              <Route path="/music" element={<Music />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="*" element={<div><h2>404 - Page Not Found</h2><p>Please use the navigation above.</p></div>} />
+            </Routes>
+          </div>
+        </main>
+      </BrowserRouter>
+    </>
   );
 }
 
