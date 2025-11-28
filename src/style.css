@@ -1,9 +1,3 @@
-/*
-Primary Base (Background)	Deep Charcoal	#121212	The dominant color for the main screen background.
-Secondary Base (Elements)	Dark Gray/Slate	#212121	For containers, cards, and distinct section backgrounds. Creates subtle depth.
-Text/Highlight	            Soft White	    #E0E0E0	The primary text color. Soft contrast for reduced eye strain.
-Accent (CTA/Action)	        Royal Purple	#8A2BE2	The key highlight color for CTAs, icons, and alerts.
-*/
 fakeSelector {
     background-color: #3f054f;
     background-color: #663399;
@@ -12,7 +6,6 @@ fakeSelector {
     background-color: #156070;
     background-color: #272462;
 }
-
 
 body {
     background-color: #121212;
@@ -23,13 +16,6 @@ body {
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-}
-
-header {
-    background-color: #212121;
-    margin-bottom: 15px;
-    position: sticky;
-    top: 0;
 }
 
 section {
@@ -45,15 +31,16 @@ a {
 }
 
 a:link {
-    color: #E0E0E0;
+    color: #CAA8F5;
 }
 
 a:visited {
-    color: #E0E0E0;
+    color: #CAA8F5;
 }
 
 h1 {
     font-size: 2.5rem;
+    text-align: center;
 }
 
 h2 {
@@ -88,25 +75,52 @@ h6 {
     font-style: normal;
 }
 
+small {
+    font-size: 0.75rem;
+}
+
 strong {
     font-weight: 600;
 }
 
-.track-list {
-    list-style: decimal;
+blockquote {
+    margin: 1em 0;
+    /* Vertical spacing */
+    padding-left: 1em;
+    border-left: 4px solid #156070;
+    /* Accent color border */
+    font-style: italic;
+    font-size: 1em;
+    color: #4a4a4a;
 }
 
-.track-info {
-    margin-left: 50px;
-    margin-bottom: 15px;
+p {
+    margin: 1em 0;
+}
+
+footer {
+    text-align: center;
+}
+
+#title {
+    padding-top: 25px;
+    font-family: "Silkscreen", sans-serif;
+    color: #CAA8F5;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 0px 0px 10px hotpink;
 }
 
 #quote {
-    color: #156070;
-    font-family: "Stack Sans Notch", sans-serif;
     align-content: center;
     text-align: center;
-    height: 50px;
+    min-height: 50px;
+}
+
+#quote blockquote {
+    font-family: "Stack Sans Notch", sans-serif;
+    border: 0px;
+    color: #156070;
 }
 
 #body {
@@ -127,19 +141,21 @@ strong {
 
 #top-nav {
     display: flex;
-    flex-flow: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
     padding: 15px;
     border-bottom: solid #156070;
+    background-color: #212121;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-#top-nav .link li {
+
+#top-nav .link-button {
     padding: 10px;
-}
-
-#top-nav li {
+    border: 0px;
     border-radius: 10px;
     background-color: #121212;
     color: #156070;
@@ -149,23 +165,85 @@ strong {
     justify-content: center;
     align-items: center;
     font-family: "Stack Sans Notch", sans-serif;
+    cursor: pointer;
     transition:
         background-color 1s, color 1s;
 }
 
-#top-nav li:hover {
+#top-nav .link-button:hover,
+#top-nav .link-button.active {
     background-color: #3f054f;
     color: #CAA8F5;
 }
+
+#top-nav .link-button.active {
+    cursor: default;
+}
+
 
 #personal-data {
     text-align: center;
 }
 
-#media-player,
-#quote {
+#header {
     background: #3F054F;
     background: radial-gradient(circle, rgba(63, 5, 79, 1) 75%, rgba(21, 96, 112, 1) 100%);
+}
+
+#top-lists {
+    display: flex;
+}
+
+.top-list {
+    flex: 1;
+}
+
+.top-list h2 {
+    text-align: center;
+}
+
+#weekly-summary,
+#music-profile-links {
+    text-align: center;
+}
+
+#music-profile-links>div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#music-profile-links img {
+    width: 50px;
+}
+
+.blog-categories {
+    background: #3F054F;
+    background: radial-gradient(circle, rgba(63, 5, 79, 1) 75%, rgba(21, 96, 112, 1) 100%);
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.category-button {
+    background-color: #121212;
+    border-radius: 10px;
+    color: #156070;
+    border: 0px;
+    padding: 10px;
+    flex: 1;
+    cursor: pointer;
+    transition:
+        background-color 1s, color 1s;
+}
+
+.category-button:hover,
+.category-button.active {
+    background-color: transparent;
+    color: #CAA8F5;
+}
+
+.category-button.active {
+    cursor: default;
 }
 
 .profile-pic {
@@ -223,4 +301,40 @@ strong {
     #media-player {
         margin: 0px;
     }
+}
+
+pre {
+    background-color: #282c34;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 1.5em 0;
+}
+
+pre code {
+    font-family: "Google Sans Code", monospace;
+    font-size: 0.875em;
+}
+
+ol {
+    counter-reset: item;
+}
+
+ol li {
+    margin-bottom: 0.5em;
+    padding-left: 1.5em;
+    position: relative;
+}
+
+ol li::before {
+    content: counter(item);
+    counter-increment: item;
+    color: white;
+    color: #156070;
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
 }

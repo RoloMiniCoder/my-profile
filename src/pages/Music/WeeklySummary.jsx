@@ -5,7 +5,7 @@ export default function WeeklySummary() {
     const { data: summary, isLoading, error } = useDataFetching(`/music/summary`);
 
     return (
-        < section className="music-section weekly-summary" >
+        <section id='weekly-summary'>
             <DataStateWrapper isLoading={isLoading} error={error}>
                 {summary && (<>
                     <h2>Weekly Summary 📊</h2>
@@ -19,6 +19,9 @@ export default function WeeklySummary() {
                     </ul>
                 </>)}
             </DataStateWrapper>
+            <footer>
+                <p><small>Data extracted from <a href="https://www.last.fm/" target='_blank'>Last.fm</a></small></p>
+            </footer>
         </section>
     )
 }
