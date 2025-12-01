@@ -19,7 +19,8 @@ export default function useDataPollingFetching(url, intervalMs = 60000) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const newData = await response.json();
-      setData(newData.quote);
+      //setData(newData.quote);
+      setData(newData);
       setError(null);
     } catch (e) {
       console.error("Polling error:", e);

@@ -12,15 +12,16 @@ import Projects from './pages/Projects'
 import Music from './pages/Music';
 import Gaming from './pages/Gaming';
 import Blog from './pages/Blog';
+import NowPlaying from './components/NowPlaying/NowPlaying'
 
 function Quote() {
-  const { data: quote, isLoading, error } = useDataPollingFetching(`/quotes`);
+  const { data, isLoading, error } = useDataPollingFetching(`/quotes`);
 
   return (
     <div id='quote'>
-      {quote && (
+      {data && (
         <blockquote>
-          <p>{quote}</p>
+          <p>{data.quote}</p>
         </blockquote>
       )}
     </div>)
@@ -43,6 +44,7 @@ function Button({ buttonText, linkTo }) {
 function App() {
   return (
     <>
+      <NowPlaying />
       <div id='header'>
         <h1 id='title'>Martelation Station</h1>
         <Quote />
