@@ -12,6 +12,7 @@ import Projects from './pages/Projects'
 import Music from './pages/Music';
 import Gaming from './pages/Gaming';
 import Blog from './pages/Blog';
+import NowPlaying from './components/NowPlaying/NowPlaying'
 
 // Component imports
 import Quote from './components/Quote';
@@ -19,6 +20,7 @@ import NowPlaying from './components/NowPlaying'
 
 // Style imports
 import './App.css'
+
 
 function Button({ buttonText, linkTo }) {
 
