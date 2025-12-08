@@ -1,0 +1,11 @@
+.code-container pre {
+    background-color: #282c34;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 1.5em 0;
+}
+
+.code-container pre code {
+    font-family: "Google Sans Code", monospace;
+    font-size: 0.875em;
+}

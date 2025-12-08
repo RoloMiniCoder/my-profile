@@ -1,0 +1,19 @@
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 15px;
+    padding: 15px;
+}
+
+.projects__card {
+    flex: 0 1 30%;
+    min-width: 250px;
+    border-radius: 10px;
+    background-color: #121212;
+    padding: 15px;
+}
+
+.projects__card img {
+    max-width: 100%;
+}

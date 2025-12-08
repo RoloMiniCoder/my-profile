@@ -1,4 +1,4 @@
-import '../spinner.css'
+import './LoadingSpinner.css'
 
 const LoadingSpinner = () => (
   <div className="spinner-container">

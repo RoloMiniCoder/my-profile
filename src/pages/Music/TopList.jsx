@@ -1,11 +1,13 @@
 import useDataFetching from '../../hooks/useDataFetching';
 import DataStateWrapper from '../../components/DataStateWrapper';
 
+import './TopList.css'
+
 function TopTracks({ topTracks }) {
     return (
-        <div className='top-list'>
+        <div className='top-lists__list'>
             <h2>Recent Listens</h2>
-            <ol className="track-list">
+            <ol >
                 {topTracks.map((track) => (
                     <li key={track.name + track.artist.name}>
                         <p>{track.name}<br /><small>{track.artist.name}</small></p>
@@ -18,9 +20,9 @@ function TopTracks({ topTracks }) {
 
 function TopArtists({ topArtists }) {
     return (
-        <div className='top-list'>
+        <div className='top-lists__list'>
             <h2>Top Artists</h2>
-            <ol className='artist-list'>
+            <ol>
                 {topArtists.map(artist => (
                     <li key={artist.name}>
                         <p>{artist.name}<br /><small>Played {artist.playcount} times</small></p>
@@ -38,7 +40,7 @@ export default function TopList() {
         <section>
             <DataStateWrapper isLoading={isLoading} error={error}>
                 {musicLists && (
-                    <div id='top-lists'>
+                    <div className='top-lists'>
                         <TopTracks topTracks={musicLists.topTracks} />
                         <TopArtists topArtists={musicLists.topArtists} />
                     </div>

@@ -1,5 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 
+import './CategoryButtons.css'
+
 const categories = [
     'all',
     'books',
@@ -10,7 +12,7 @@ const categories = [
 ]
 
 function CategoryButton({ category }) {
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams, a, b, c] = useSearchParams();
 
     const isActive = category === (searchParams.get('type') || 'all');
 
@@ -26,7 +28,7 @@ function CategoryButton({ category }) {
         <button
             onClick={handleCategoryChange}
             type='button'
-            className={`category-button ${isActive ? 'active' : ''}`}
+            className={`blog__categories__button ${isActive ? 'blog__categories__button--active' : ''}`}
         >
             {category.toUpperCase()}
         </button>
@@ -35,7 +37,7 @@ function CategoryButton({ category }) {
 
 export default function CategoryButtons() {
     return (
-        <section className='blog-categories'>
+        <section className='blog__categories'>
             {categories.map(category => {
                 return (<CategoryButton category={category} key={category} />)
             })}
