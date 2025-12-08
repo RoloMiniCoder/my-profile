@@ -1,6 +1,8 @@
 import TopList from './TopList';
 import WeeklySummary from './WeeklySummary';
 
+import './Music.css'
+
 const profileList = [
   { link: 'https://www.last.fm/user/darkstahrl', name: 'Last.fm', img: `/icons8-last.fm-96.png` },
   { link: 'https://tidal.com/artist/63737051', name: 'Tidal', img: `public/icons8-tidal-96.png` },
@@ -9,7 +11,7 @@ const profileList = [
 
 function ProfileLinks({ profiles }) {
   return (
-    <section id='music-profile-links'>
+    <section className='music-profiles'>
       <h2>Find the stuff I listen to on:</h2>
       <div>
         {profiles.map((profile) => (

@@ -5,27 +5,20 @@ import {
   Link,
   useLocation
 } from 'react-router-dom';
-import useDataPollingFetching from './hooks/useDataPollingFetching';
 
+// Page imports
 import AboutMe from './pages/AboutMe';
 import Projects from './pages/Projects'
 import Music from './pages/Music';
 import Gaming from './pages/Gaming';
 import Blog from './pages/Blog';
-import NowPlaying from './components/NowPlaying/NowPlaying'
 
-function Quote() {
-  const { data, isLoading, error } = useDataPollingFetching(`/quotes`);
+// Component imports
+import Quote from './components/Quote';
+import NowPlaying from './components/NowPlaying'
 
-  return (
-    <div id='quote'>
-      {data && (
-        <blockquote>
-          <p>{data.quote}</p>
-        </blockquote>
-      )}
-    </div>)
-}
+// Style imports
+import './App.css'
 
 function Button({ buttonText, linkTo }) {
 
@@ -34,7 +27,7 @@ function Button({ buttonText, linkTo }) {
 
   return (
     <Link to={linkTo}>
-      <button type='button' className={`link-button ${isActive ? 'active' : ''}`}>
+      <button type='button' className={`topnav__button ${isActive ? 'topnav__button--active' : ''}`}>
         {buttonText}
       </button>
     </Link>
@@ -44,22 +37,24 @@ function Button({ buttonText, linkTo }) {
 function App() {
   return (
     <>
-      <NowPlaying />
-      <div id='header'>
-        <h1 id='title'>Martelation Station</h1>
+      <div className='header'>
+        <NowPlaying />
+        <h1 className='header__title'>Martelation Station</h1>
         <Quote />
       </div>
       <BrowserRouter>
-        <nav id='top-nav'>
-          <Button buttonText='ABOUT ME' linkTo='/aboutme' />
-          <Button buttonText='BLOG' linkTo='/blog' />
-          <Button buttonText='LISTENING TO' linkTo='/music' />
-          <Button buttonText='GAMING' linkTo='/gaming' />
-          <Button buttonText='PROJECTS' linkTo='/projects' />
+        <nav className='topnav'>
+          <div className='topnav_buttons'>
+            <Button buttonText='ABOUT ME' linkTo='/aboutme' />
+            <Button buttonText='BLOG' linkTo='/blog' />
+            <Button buttonText='LISTENING TO' linkTo='/music' />
+            <Button buttonText='GAMING' linkTo='/gaming' />
+            <Button buttonText='PROJECTS' linkTo='/projects' />
+          </div>
         </nav>
 
-        <main id="body">
-          <div id="content">
+        <main className="body">
+          <div className="body__content">
             <Routes>
               <Route path="/" element={<AboutMe />} />
               <Route path="/aboutme" element={<AboutMe />} />

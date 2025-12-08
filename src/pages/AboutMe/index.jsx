@@ -11,6 +11,8 @@ import {
 } from '@fortawesome/free-brands-svg-icons';
 import { faDatabase, faCode, faBrain, faCloud, faPenNib, faDumbbell, faGuitar } from '@fortawesome/free-solid-svg-icons';
 
+import './AboutMe.css'
+
 function calculateCurrentAge() {
   const pastDate = new Date(1991, 5, 10);
   const now = new Date();

@@ -1,0 +1,12 @@
+.music-profiles {
+    text-align: center;
+}
+
+.music-profiles>div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.music-profiles img {
+    width: 50px;
+}

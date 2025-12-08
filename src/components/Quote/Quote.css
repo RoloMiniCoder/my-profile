@@ -1,0 +1,11 @@
+#quote {
+    align-content: center;
+    text-align: center;
+    min-height: 50px;
+}
+
+#quote blockquote {
+    font-family: "Stack Sans Notch", sans-serif;
+    border: 0px;
+    color: var(--dark-cyan);
+}

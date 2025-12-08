@@ -1,0 +1,11 @@
+.top-lists {
+    display: flex;
+}
+
+.top-lists__list {
+    flex: 1;
+}
+
+.top-lists__list h2 {
+    text-align: center;
+}

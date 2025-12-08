@@ -1,5 +1,6 @@
 import { useMemo } from 'react';
 import hljs from 'highlight.js';
+import './CodeBlock.css'
 import 'highlight.js/styles/atom-one-dark.css';
 
 const CodeBlock = ({ inline, children, className, ...props }) => {
@@ -26,12 +27,14 @@ const CodeBlock = ({ inline, children, className, ...props }) => {
     }, [rawCode, language]);
 
     return (
-        <pre className={className} {...props}>
-            <code
-                dangerouslySetInnerHTML={{ __html: highlightedCode }}
-                className={className}
-            />
-        </pre>
+        <div className='code-container'>
+            <pre className={className} {...props}>
+                <code
+                    dangerouslySetInnerHTML={{ __html: highlightedCode }}
+                    className={className}
+                />
+            </pre>
+        </div>
     );
 };
 

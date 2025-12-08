@@ -5,9 +5,11 @@ import useDataFetching from "../../hooks/useDataFetching"
 import CategoryButtons from './CategoryButtons';
 import MarkdownRenderer from './MarkdownRenderer';
 
+import './Blog.css'
+
 function PostCard({ post }) {
     return (
-        <section className="blog-content">
+        <section className="blog_content">
             <h3>{post.title}</h3>
             <MarkdownRenderer markdownText={post.content_body} />
             <br />
@@ -24,12 +26,10 @@ export default function Blog() {
         endpoint = `${endpoint}?type=${currentCategory}`;
     }
 
-    // The useDataFetching hook will automatically re-run whenever 'endpoint' changes
     const { data: posts, isLoading, error } = useDataFetching(endpoint);
-    console.log(posts)
 
     return (
-        <div className='blog-page'>
+        <>
             <CategoryButtons />
             <DataStateWrapper isLoading={isLoading} error={error}>
                 {posts && (
@@ -37,6 +37,6 @@ export default function Blog() {
                         <PostCard post={post} key={post.id} />
                     )))}
             </DataStateWrapper>
-        </div >
+        </>
     )
 }

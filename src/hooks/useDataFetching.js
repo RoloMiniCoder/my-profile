@@ -1,4 +1,4 @@
-const API_URL = `http://localhost:3001/api`
+const API_URL = `http://192.168.10.178:3001/api`
 
 import { useState, useEffect } from 'react';
 

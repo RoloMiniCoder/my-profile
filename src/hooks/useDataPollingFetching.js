@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-const API_URL = `http://localhost:3001/api`
+const API_URL = `http://192.168.10.178:3001/api`
 
 export default function useDataPollingFetching(url, intervalMs = 60000) {
   const [data, setData] = useState(null);
